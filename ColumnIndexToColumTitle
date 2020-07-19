@@ -1,0 +1,31 @@
+// code to convert Column Index to Column Title in MS Excel
+
+String convertToTitle(int index) {
+		int now = 1;
+		int pIndex = 1;
+		StringBuilder strb = new StringBuilder();
+		
+		while(index != 0) {
+
+			pIndex = index;
+			now = 1;
+			
+			while(pIndex != 0) {
+				if(pIndex <= 26) {
+					now *= pIndex;
+					char ch = (char)(pIndex+64);
+					strb.append(ch);
+					pIndex = 0;
+					continue;
+				}
+				if(pIndex%26 == 0) {
+					pIndex = pIndex/26 - 1;
+				}
+				else pIndex /= 26;
+				now *= 26;
+			}
+			
+			index -= now;
+		}
+		return strb.toString();
+	}
