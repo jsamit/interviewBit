@@ -1,4 +1,4 @@
-// code to convert Column Index to Column Title in MS Excel
+// code to convert Column Index to Column Title in Excel
 
 String convertToTitle(int index) {
 		int now = 1;
